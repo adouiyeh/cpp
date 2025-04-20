@@ -58,6 +58,7 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "phonebook.hpp": "c"
+        "phonebook.hpp": "c",
+        "contact.hpp": "c"
     }
 }

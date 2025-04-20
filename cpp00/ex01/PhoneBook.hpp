@@ -8,7 +8,7 @@ class PhoneBook
 {
     private:
         Contact _contacts[8];
-        size_t _count = 0;
+        size_t _count;
         void _add(void);
         void _prompt(const char *msg, Contact& contact, void (Contact::*setter)(std::string& str));
         void _display(void);
@@ -16,6 +16,7 @@ class PhoneBook
 
     public:
         void run(void);
+        PhoneBook();
 };
 
 #endif
