@@ -3,12 +3,14 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <sstream>
+#include <cstdlib>
 
 class PhoneBook
 {
     private:
         Contact _contacts[8];
-        size_t _count;
+        int _count;
         void _add(void);
         void _prompt(const char *msg, Contact& contact, void (Contact::*setter)(std::string& str));
         void _display(void);
@@ -17,6 +19,7 @@ class PhoneBook
     public:
         void run(void);
         PhoneBook();
+        ~PhoneBook();
 };
 
 #endif
