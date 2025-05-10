@@ -21,6 +21,7 @@ std::string intToString(int num)
 }
 
 PhoneBook::PhoneBook() : _count(0) {}
+
 PhoneBook::~PhoneBook() {}
 
 void PhoneBook::run()

@@ -3,10 +3,9 @@
 
 void upperStr(std::string& str)
 {
-    for (int i = 0; i < str.size(); i++)
+    for (int i = 0; i < (int)str.size(); i++)
         str[i] = std::toupper(str[i]);
 }
-
 
 int main(int ac, char **av)
 {
@@ -24,7 +23,3 @@ int main(int ac, char **av)
     }
     return (0);
 }
-
-
-
-
