@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 #include <iomanip>
+#include <cstring>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -65,11 +66,47 @@ void Account::displayStatus(void) const
     _displayTimestamp();
     std::cout << "index:" << _accountIndex
               << ";amount:" << _amount
-              << ";deposits" << _nbDeposits
-              << ";withdrawals" << _nbWithdrawals
+              << ";deposits:" << _nbDeposits
+              << ";withdrawals:" << _nbWithdrawals
               << std::endl;
 }
 
 void Account::makeDeposit(int deposit)
 {
+    _nbDeposits++;
+    int p_amount = _amount;
+    _amount += deposit;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex
+              << ";p_amount:" << p_amount
+              << ";deposit:" << _nbDeposits
+              << ";amount:" << _amount
+              << ";withdrawals" << _nbWithdrawals
+              << std::endl;
+    Account::_totalNbDeposits++;
+    Account::_totalAmount += deposit;
+}
+
+bool Account::makeWithdrawal(int withdrawal)
+{
+    bool refused = false;
+    int p_amount = _amount;
+    _amount > withdrawal ? _amount -= withdrawal : refused = true;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex
+              << ";p_amount:" << p_amount
+              << ";withdrawal:";
+    if (!refused)
+    {
+        _nbWithdrawals++;
+        std::cout << withdrawal
+                  << ";amount:" << _amount
+                  << ";nb_withdrawals:" << _nbWithdrawals;
+        Account::_totalNbWithdrawals++;
+        Account::_totalAmount -= withdrawal;
+    }
+    else
+        std::cout << "refused";
+    std::cout << std::endl;
+    return refused;
 }

@@ -81,6 +81,7 @@ void PhoneBook::_search()
         std::cin.clear();
         std::cin.ignore(10000, '\n');
         std::cout << "Invalid Input\n";
+        return;
     }
     else if (i >= 1 && i < _count + 1)
     {
