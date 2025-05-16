@@ -67,7 +67,6 @@ void ClapTrap::attack(const std::string& target)
         _hitPoint--;
         _energyPoint--;
     }
-
 }
 
 #endif
