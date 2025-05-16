@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = zombieHorde
 CC = c++
 FLAGS = -std=c++98 -Wall -Werror -Wextra 
 INCS = $(wildcard *.hpp)

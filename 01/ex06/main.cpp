@@ -20,18 +20,17 @@ int main(int ac, char **av)
         Harl harl;
         switch (getLevel(av[1]))
         {
-        case 0:
-            harl.complain("DEBUG");
-        case 1:
-            harl.complain("INFO");
-        case 2:
-            harl.complain("WARNING");
-        case 3:
-            harl.complain("ERROR");
-            break;
-        default:
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            break;
+            case 0:
+                harl.complain("DEBUG");
+            case 1:
+                harl.complain("INFO");
+            case 2:
+                harl.complain("WARNING");
+            case 3:
+                harl.complain("ERROR");
+                break;
+            default:
+                std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         }
     }
     return 0;
