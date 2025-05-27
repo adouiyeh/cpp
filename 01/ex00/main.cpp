@@ -4,7 +4,6 @@
 
 int main()
 {
-    
     Zombie *zombie_ptr = newZombie("Foo");
     zombie_ptr->announce();
     randomChump("Bar");

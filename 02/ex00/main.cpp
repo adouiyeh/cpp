@@ -1,25 +1,14 @@
-
+#include "Fixed.hpp"
 #include <iostream>
 
-class Test
+int main(void)
 {
-    public:
-        int *val;
-        Test() {std::cout << "Test" << std::endl;};
-        Test(int *val) {
-            this->val = val;
-            std::cout << "Testing" << std::endl;
-        };
-        Test(const Test &test) { this->val = test.val; };
-        ~Test() {delete val; std::cout << "Destruct" << std::endl;};
-};
-
-int main()
-{
-    // Direct Initialization
-    // Copy Initialization
-
-    Test test(new int(19));
-    std::cout << *(test.val) << std::endl;
-    return (1);
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
