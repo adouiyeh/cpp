@@ -21,6 +21,7 @@ class ScalarConverter
             INT,
             FLOAT,
             DOUBLE,
+            PSEUDO,
             INVALID
         };
         static ScalarType getType(const std::string &str);
@@ -29,9 +30,12 @@ class ScalarConverter
         static void intConverter(const std::string &str);
         static void floatConverter(const std::string &str);
         static void doubleConverter(const std::string &str);
+        static void convertPseudo(const std::string &str);
         static void convert(const std::string &str);
         static bool isInt(const  std::string &str);
         static bool isFloat(const std::string &str);
         static bool isDouble(const std::string &str);
+        static bool isPseudo(const std::string &str);
+
     
 };
