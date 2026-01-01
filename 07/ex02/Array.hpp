@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 
+
 template <typename T>
 class Array {
     private:
@@ -22,4 +23,3 @@ class Array {
 };
 
 #include "Array.tpp"
-
