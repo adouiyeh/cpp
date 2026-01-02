@@ -45,3 +45,7 @@ int Span::longestSpan() {
     
     return maxVal - minVal;
 }
+
+
+
+

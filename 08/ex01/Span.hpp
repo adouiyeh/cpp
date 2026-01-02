@@ -5,17 +5,25 @@
 #include <algorithm>
 
 class Span {
-private:
-    unsigned int maxSize;
-    std::vector<int> numbers;
+    private:
+        unsigned int maxSize;
+        std::vector<int> numbers;
 
-public:
-    Span(unsigned int N);
-    Span(const Span& other);
-    Span& operator=(const Span& other);
-    ~Span();
+    public:
+        Span(unsigned int N);
+        Span(const Span& other);
+        Span& operator=(const Span& other);
+        ~Span();
 
-    void addNumber(int num);
-    int shortestSpan();
-    int longestSpan();
+        void addNumber(int num);
+        int shortestSpan();
+        int longestSpan();
+
+        template<typename It>
+        void addRange(It begin, It end)
+        {
+            if (numbers.size() + std::distance<end, begin> > maxSize)
+                throw std::overflow_error("Span is full");
+            numbers.insert(numbers.end(), begin, end);
+        }
 };
