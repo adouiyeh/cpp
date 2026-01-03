@@ -38,12 +38,26 @@ int main() {
     }
 
     std::vector<int> v1 = {6, 3, 17, 9, 11};
-    Span span3(5);
+    Span span4(5);
 
-    span3.addRange(v1.begin(), v1.end());
+    span4.addRange(v1.begin(), v1.end());
+    
+    std::cout << "Span4 shortest span: " << span4.shortestSpan() << std::endl;
+    std::cout << "Span4 longest span: " << span4.longestSpan() << std::endl;
 
-    span3.longestSpan();
+    try {
+        span4.addRange(v1.begin(), v1.end());
+    } catch (const std::overflow_error& e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
 
+    // Span span5(3);
+    // std::vector<int> v2 = {1, 2, 3, 4};
+    // try {
+    //     span5.addRange(v2.begin(), v2.end());
+    // } catch (const std::overflow_error& e) {
+    //     std::cout << "Exception caught: " << e.what() << std::endl;
+    // }
 
     return 0;
 }

@@ -22,7 +22,7 @@ class Span {
         template<typename It>
         void addRange(It begin, It end)
         {
-            if (numbers.size() + std::distance<end, begin> > maxSize)
+            if (numbers.size() + std::distance(begin, end) > maxSize)
                 throw std::overflow_error("Span is full");
             numbers.insert(numbers.end(), begin, end);
         }

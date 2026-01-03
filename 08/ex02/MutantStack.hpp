@@ -20,16 +20,15 @@ public:
 
     iterator begin(void) {
 		return std::stack<T>::c.begin();
-	};
+	}
 	iterator end(void) {
 		return std::stack<T>::c.end();
-	};
+	}
 
 	const_iterator begin(void) const {
 		return std::stack<T>::c.begin();
-	};
+	}
 	const_iterator end(void) const {
 		return std::stack<T>::c.end();
-	};
-
+	}
 };
